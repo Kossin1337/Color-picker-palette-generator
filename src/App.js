@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { RandomColorGenerator } from "./Components/RandomColorGenerator";
 import { Navigation } from "./Components/Navigation";
+import { CustomPalette } from "./Pages/Palette/CustomPalette";
+import { Info } from "./Pages/Info/Info";
 
 export function App() {
   const [backgroundColor, setBackgroundColor] = useState("#000");
@@ -29,7 +31,10 @@ export function App() {
           <h1>Color Customizer</h1>
         </Route>
         <Route path="/color-palette">
-          <h1>Color Palette</h1>
+          <CustomPalette />
+        </Route>
+        <Route path="/info">
+          <Info />
         </Route>
       </Switch>
     </Router>

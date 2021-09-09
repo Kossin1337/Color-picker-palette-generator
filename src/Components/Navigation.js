@@ -21,6 +21,9 @@ export function Navigation({ favColors }) {
           <li className="navigation-item">
             <NavLink to="/color-palette">Custom Palette</NavLink>
           </li>
+          <li className="navigation-item">
+            <NavLink to="/info">Info</NavLink>
+          </li>
         </ul>
       </div>
       <button className="favorite-colors">
