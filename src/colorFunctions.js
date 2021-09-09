@@ -1,7 +1,9 @@
 export const createRGB = () => {
   let rgbColorValue = "rgb(";
+  const rgbArray = [];
   for (let i = 0; i < 3; i++) {
     const randomRgbValue = Math.floor(Math.random() * 255);
+    rgbArray.push(randomRgbValue);
     if (i !== 2) {
       rgbColorValue += `${randomRgbValue},`;
     } else {
@@ -9,11 +11,12 @@ export const createRGB = () => {
     }
   }
 
-  return rgbColorValue;
+  return [rgbColorValue, rgbArray];
 };
 
 export const createHEX = () => {
-  let hexColorValue = "";
+  let hexColorValue = "#";
+  const hexArray = [];
   const hexRef = [
     "0",
     "1",
@@ -34,14 +37,17 @@ export const createHEX = () => {
   ];
 
   for (let i = 0; i < 6; i++) {
-    hexColorValue += hexRef[Math.floor(Math.random() * 16)];
+    let randomHexValue = hexRef[Math.floor(Math.random() * 16)];
+    hexColorValue += randomHexValue;
+    hexArray.push(randomHexValue);
   }
 
-  return `#${hexColorValue}`;
+  return [hexColorValue, hexArray];
 };
 
 export const createHSL = () => {
   let hslColor = "";
+  console.log(hslColor);
 
   return hslColor;
 };
