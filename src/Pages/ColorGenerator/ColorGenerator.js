@@ -1,27 +1,31 @@
 import React, { useState } from "react";
-import { createRGB, createHEX, createHSL } from "../colorFunctions";
-import "./RandomColorGenerator.css";
+import {
+  createRGB,
+  createHEX,
+  createHSL,
+} from "../../functions/colorFunctions";
+import "./ColorGenerator.css";
 
-export function RandomColorGenerator({ changeBackground, setFavColors }) {
-  const [color, setColor] = useState(null);
-  const [colorModel, setColorModel] = useState("HEX");
+export function ColorGenerator({ changeBackground, setFavColors }) {
+  const [color, setColor] = useState("#121212");
+  // const [colorModel, setColorModel] = useState("HEX");
 
   function generateRGB() {
-    setColorModel("RGB");
+    // setColorModel("RGB");
     const [color] = createRGB();
     setColor(color);
     changeBackground(color);
   }
 
   function generateHEX() {
-    setColorModel("HEX");
+    // setColorModel("HEX");
     const [color] = createHEX();
     setColor(color);
     changeBackground(color);
   }
 
   function generateHSL() {
-    setColorModel("HSL");
+    // setColorModel("HSL");
     const [color] = createHSL;
     console.log(`generated: ${color}`);
     setColor(color);
@@ -52,7 +56,7 @@ export function RandomColorGenerator({ changeBackground, setFavColors }) {
         </button>
       </div>
       <div className="color-result">
-        <h3>{color ? color : "#000"}</h3>
+        <h3>{color}</h3>
         <i className="fas fa-copy" onClick={copyToClipboard}></i>
         <i className="far fa-heart" onClick={addToFavorites}></i>
       </div>
