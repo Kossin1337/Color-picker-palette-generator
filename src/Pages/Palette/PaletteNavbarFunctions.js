@@ -1,5 +1,3 @@
-import React from "react";
-
 export const PaletteNavbarFunctions = ({
   lastPalette,
   setLastPalette,
@@ -7,7 +5,6 @@ export const PaletteNavbarFunctions = ({
   setCurrentPalette,
   nextPalette,
   setNextPalette,
-  savedPalettes,
   setSavedPalettes,
 }) => {
   function undoPalette() {
@@ -18,9 +15,6 @@ export const PaletteNavbarFunctions = ({
     } else {
       alert(`can't undo`);
     }
-    // console.log(
-    //   `Undoing the palette and comming back to palette: ${lastPalette}`
-    // );
   }
 
   function redoPalette() {
@@ -31,15 +25,11 @@ export const PaletteNavbarFunctions = ({
     } else {
       alert(`Can't redo`);
     }
-    // console.log(
-    //   `Redoing the palette and comming back to palette: ${nextPalette}`
-    // );
   }
 
   function savePalette() {
     setSavedPalettes((prevPalettes) => [...prevPalettes, currentPalette]);
-    console.log(`Saving CURRENT-PALETTE to bookmarks`);
-    console.log(savedPalettes);
+    console.log(`Saving ${currentPalette} to bookmarks`);
   }
 
   return (
@@ -60,7 +50,7 @@ export const PaletteNavbarFunctions = ({
         className="palette-functions-item save-palette"
         onClick={savePalette}
       >
-        <i className="far fa-bookmark"></i> SAVE
+        <i className="far fa-bookmark"></i>
       </div>
     </div>
   );

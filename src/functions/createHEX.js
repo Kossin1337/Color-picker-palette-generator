@@ -26,5 +26,5 @@ export const createHEX = () => {
     hexArray.push(randomHexValue);
   }
 
-  return [hexColorValue, hexArray];
+  return [hexColorValue];
 };

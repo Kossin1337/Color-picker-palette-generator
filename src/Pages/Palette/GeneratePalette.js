@@ -8,9 +8,9 @@ export const GeneratePalette = ({ currentPalette }) => {
           <div
             key={index}
             className="color-on-palette"
-            style={{ backgroundColor: color[0] }}
+            style={{ backgroundColor: color }}
           >
-            <span>{color[0]}</span>
+            <span className="palette-color-name">{color}</span>
           </div>
         );
       })}

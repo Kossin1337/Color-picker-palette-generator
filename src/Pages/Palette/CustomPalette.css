@@ -74,3 +74,7 @@
 .color-on-palette:hover {
   opacity: 0.85;
 }
+
+.palette-color-name {
+  font-size: 1rem;
+}

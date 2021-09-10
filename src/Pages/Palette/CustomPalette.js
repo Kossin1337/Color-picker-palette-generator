@@ -14,7 +14,9 @@ export const CustomPalette = ({ changeBackground }) => {
     changeBackground("#121212");
   }, []);
 
-  useEffect(() => {}, [currentPalette]);
+  function handleClick(event) {
+    console.log("yo");
+  }
 
   function generatePalette() {
     setLastPalette(currentPalette);
@@ -24,7 +26,11 @@ export const CustomPalette = ({ changeBackground }) => {
   return (
     <div className="palette-wrapper">
       <div className="palette-navigation" id="palette-navigation">
-        <p className="generate-palette" onClick={generatePalette}>
+        <p
+          className="generate-palette"
+          onClick={generatePalette}
+          onKeyPress={handleClick}
+        >
           Press spacebar to generate palettes
         </p>
         <PaletteNavbarFunctions
