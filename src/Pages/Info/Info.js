@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import { Article } from "./Article";
+import { ArticleRGB } from "./ArticleRGB";
+import { ArticleHEX } from "./ArticleHEX";
+import { ArticleHSL } from "./ArticleHSL";
 import { Route } from "react-router-dom";
 import "./Info.css";
 import { InfoNavigation } from "./InfoNavigation";
@@ -20,13 +22,13 @@ export const Info = ({ changeBackground }) => {
             </h2>
           </Route>
           <Route path="/info/rgb">
-            <Article title={`RGB (Red, Green, Blue)`} />
+            <ArticleRGB />
           </Route>
           <Route path="/info/hex">
-            <Article title={`HEX (Hexadecimal)`} />
+            <ArticleHEX />
           </Route>
           <Route path="/info/hsl">
-            <Article title={`HSL (Hue, Saturation, Lightness)`} />
+            <ArticleHSL />
           </Route>
         </div>
       </div>
