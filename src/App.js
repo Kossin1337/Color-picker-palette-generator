@@ -36,7 +36,7 @@ export function App() {
         </Route>
 
         <Route path="/info">
-          <Info />
+          <Info changeBackground={setBackgroundColor} />
         </Route>
       </Switch>
     </Router>

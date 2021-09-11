@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import {
-  createRGB,
-  createHEX,
-  createHSL,
-} from "../../functions/colorFunctions";
+import { createRGB } from "../../functions/createRGB";
+import { createHEX } from "../../functions/createHEX";
+import { createHSL } from "../../functions/createHSL";
 import "./ColorGenerator.css";
 
 export function ColorGenerator({ changeBackground, setFavColors }) {
@@ -26,8 +24,7 @@ export function ColorGenerator({ changeBackground, setFavColors }) {
 
   function generateHSL() {
     // setColorModel("HSL");
-    const [color] = createHSL;
-    console.log(`generated: ${color}`);
+    const [color] = createHSL();
     setColor(color);
     changeBackground(color);
   }
