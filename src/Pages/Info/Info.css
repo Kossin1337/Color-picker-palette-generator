@@ -70,6 +70,87 @@
   padding: 0;
 }
 
+.article-info {
+  font-size: 0.9rem;
+  color: #aeaeae;
+}
+
 .article-text {
   color: #ededed;
+}
+
+.customize-ur-color-btn {
+}
+
+/* TRIVIA - ciekawostka */
+.trivia {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.trivia-bar {
+  background-color: #f5dd29;
+  color: #000;
+  border-radius: 25px;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trivia-heading {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.trivia-icon {
+  font-weight: 1.1rem;
+  margin-left: 1rem;
+}
+
+.article-routing {
+  color: rgba(245, 221, 41, 0.8);
+}
+
+.inactive {
+  visibility: none;
+  display: none;
+}
+
+.active {
+  visibility: visible;
+}
+
+.trivia-source {
+  font-size: 0.8rem;
+  color: #f5dd29;
+}
+
+.generate-color {
+  cursor: pointer;
+  font-weight: 500;
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  color: #000;
+  background-color: #f5dd29;
+  border: 2px solid #000;
+
+  border-radius: 20px;
+  transition: all 0.2s ease-in;
+}
+
+.generate-color:hover {
+  transform: scale(1.05);
+  background-color: #000;
+  color: #f5dd29;
+  border-color: #f5dd29;
 }

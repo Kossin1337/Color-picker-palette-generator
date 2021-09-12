@@ -8,7 +8,7 @@ import { InfoNavigation } from "./InfoNavigation";
 
 export const Info = ({ changeBackground }) => {
   useEffect(() => {
-    changeBackground("#121212");
+    changeBackground("#101010");
   }, []);
 
   return (
