@@ -27,7 +27,7 @@ export function Navigation({ favColors }) {
         </ul>
       </div>
       <button className="favorite-colors">
-        <p className="number-of-fav-colors">{favColors.length}</p>
+        <p className="number-of-fav-colors">{favColors}</p>
         <i className="far fa-heart" onClick={showFavorites}></i>
       </button>
     </nav>

@@ -38,7 +38,7 @@
 }
 
 .articles-sidebar a.active {
-  color: #fefefe;
+  color: #f5dd29;
   font-weight: 700;
 }
 
@@ -75,11 +75,8 @@
   color: #aeaeae;
 }
 
-.article-text {
+.article p {
   color: #ededed;
-}
-
-.customize-ur-color-btn {
 }
 
 /* TRIVIA - ciekawostka */
@@ -143,7 +140,6 @@
   color: #000;
   background-color: #f5dd29;
   border: 2px solid #000;
-
   border-radius: 20px;
   transition: all 0.2s ease-in;
 }

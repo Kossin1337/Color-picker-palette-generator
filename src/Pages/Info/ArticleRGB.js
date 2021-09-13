@@ -15,16 +15,16 @@ export const ArticleRGB = () => {
           Kossin | Read time: 2min
         </Link>
       </div>
-      <p className="article-text">
+      <p>
         The name of the model comes from the initials of the three additive
         primary colors.
       </p>
-      <p className="article-text">
+      <p>
         The basic principle of the RGB color model is additive color mixing.
         It’s the process of mixing together 3 primary colors (Red, Green, Blue),
         in different proportions (from 0 to 255) to produce a variety of colors.
       </p>
-      <p className="article-text">
+      <p>
         Each of the three primary colors can be represented in 256 different
         shades with the corresponding value ranging from (0 to 255). That means
         you can form 16 777 216 different colors using 256 shadees of 3 shades
@@ -61,7 +61,7 @@ export const ArticleRGB = () => {
           </a>
         </div>
       </div>
-      <p className="article-text">
+      <p>
         256 different shades of RGB primary color can be represented as a
         combination of two{" "}
         <Link to="/info/hex" className="article-routing">

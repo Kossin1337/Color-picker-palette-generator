@@ -1,24 +1,39 @@
 import { NavLink } from "react-router-dom";
 
+const articles = [
+  {
+    title: "What are color models?",
+    url: "/info/color-models",
+  },
+  {
+    title: "RGB (Red, Green, Blue)",
+    url: "/info/rgb",
+  },
+  {
+    title: "HEX (Hexadecimal)",
+    url: "/info/hex",
+  },
+  {
+    title: "HSL (Hue, Saturation, Lightness)",
+    url: "/info/hsl",
+  },
+  {
+    title: "CMYK (Cyan, Magenta, Yellow, Black)",
+    url: "/info/cmyk",
+  },
+];
+
 export const InfoNavigation = () => {
   return (
     <div className="articles-sidebar">
       <h2 className="sidebar-title">Explore color models</h2>
-      <NavLink to="/info/color-models">
-        <h3 className="article-title">What are color models?</h3>
-      </NavLink>
-      <NavLink to="/info/rgb">
-        <h3 className="article-title">RGB (Red, Green, Blue)</h3>
-      </NavLink>
-      <NavLink to="/info/hex">
-        <h3 className="article-title">HEX (Hexadecimal)</h3>
-      </NavLink>
-      <NavLink to="/info/hsl">
-        <h3 className="article-title">HSL (Hue, Saturation, Lightness)</h3>
-      </NavLink>
-      <NavLink to="/info/cmyk">
-        <h3 className="article-title">CMYK (Cyan, Magenta, Yellow, Black)</h3>
-      </NavLink>
+      {articles.map(({ url, title }) => {
+        return (
+          <NavLink to={url}>
+            <h3 className="article-title">{title}</h3>
+          </NavLink>
+        );
+      })}
     </div>
   );
 };

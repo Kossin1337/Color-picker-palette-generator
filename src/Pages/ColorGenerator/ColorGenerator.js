@@ -6,24 +6,20 @@ import "./ColorGenerator.css";
 
 export function ColorGenerator({ changeBackground, setFavColors }) {
   const [color, setColor] = useState("#121212");
-  // const [colorModel, setColorModel] = useState("HEX");
 
   function generateRGB() {
-    // setColorModel("RGB");
     const [color] = createRGB();
     setColor(color);
     changeBackground(color);
   }
 
   function generateHEX() {
-    // setColorModel("HEX");
     const [color] = createHEX();
     setColor(color);
     changeBackground(color);
   }
 
   function generateHSL() {
-    // setColorModel("HSL");
     const [color] = createHSL();
     setColor(color);
     changeBackground(color);
