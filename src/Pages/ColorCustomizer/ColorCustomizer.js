@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PhotoshopPicker, SliderPicker } from "react-color";
 
 import "./ColorCustomizer.css";
 
-export const ColorCustomizer = ({ setFavColors }) => {
+export const ColorCustomizer = ({ changeBackground, setFavColors }) => {
   const [color, setColor] = useState("#f512ff");
 
-  function updateSlider(color) {
-    console.log("updating slider");
+  useEffect(() => {
+    changeBackground("#121212");
+  }, []);
+
+  function updateColor(color) {
     setColor(color);
   }
 
@@ -16,8 +19,8 @@ export const ColorCustomizer = ({ setFavColors }) => {
   }
 
   function addToFavorites() {
-    console.log(`Added ${color} item to favorites`);
-    setFavColors((prevColors) => [...prevColors, color]);
+    console.log(`Added ${color.hex} item to favorites`);
+    setFavColors((prevColors) => [...prevColors, color.hex]);
   }
 
   function copyHEX() {
@@ -44,35 +47,37 @@ export const ColorCustomizer = ({ setFavColors }) => {
         <PhotoshopPicker
           color={color}
           header={"Color customizer"}
-          onChangeComplete={(color) => setColor(color)}
+          onChangeComplete={updateColor}
         />
         <SliderPicker
-          className="react-slider"
           color={color}
-          onClick={updateSlider}
-          onChangeComplete={(color) => setColor(color)}
+          style={{ "background-color": "#ffffff" }}
+          className="react-slider"
+          onChangeComplete={updateColor}
         />
       </div>
 
-      <div className="color-result">
-        <div className="color-result-info">
-          <h3>{color.hex}</h3>
-          <i className="fas fa-copy" onClick={copyToClipboard}></i>
-          <i className="far fa-heart" onClick={addToFavorites}></i>
+      {color.hex && (
+        <div>
+          <div className="color-result">
+            <div className="color-result-info">
+              <h3>{color.hex}</h3>
+              <i className="far fa-heart" onClick={addToFavorites}></i>
+            </div>
+          </div>
+          <div className="copy-buttons">
+            <button className="copy-btn" onClick={copyHEX}>
+              Copy HEX
+            </button>
+            <button className="copy-btn" onClick={copyRGB}>
+              Copy RGB
+            </button>
+            <button className="copy-btn" onClick={copyHSL}>
+              Copy HSL
+            </button>
+          </div>
         </div>
-
-        <div className="copy-buttons">
-          <button className="copy-btn" onClick={copyHEX}>
-            Copy HEX
-          </button>
-          <button className="copy-btn" onClick={copyRGB}>
-            Copy RGB
-          </button>
-          <button className="copy-btn" onClick={copyHSL}>
-            Copy HSL
-          </button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

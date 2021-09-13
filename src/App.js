@@ -12,6 +12,12 @@ export function App() {
   const [backgroundColor, setBackgroundColor] = useState("#121212");
   const [favoriteColors, setFavoriteColors] = useState([]);
 
+  // function addFavColor(color) {
+  //   favoriteColors[favoriteColors.length] !== color
+  //     ? setFavoriteColors((prevColors) => [...prevColors, color])
+  //     : console.log("Color already added!");
+  // }
+
   useEffect(() => {
     document.body.style.backgroundColor = backgroundColor;
   }, [backgroundColor]);
@@ -30,7 +36,10 @@ export function App() {
         </Route>
 
         <Route path="/color-customizer">
-          <ColorCustomizer setFavColors={setFavoriteColors} />
+          <ColorCustomizer
+            changeBackground={setBackgroundColor}
+            setFavColors={setFavoriteColors}
+          />
         </Route>
 
         <Route path="/color-palette">
