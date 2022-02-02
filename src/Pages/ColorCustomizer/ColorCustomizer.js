@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { PhotoshopPicker, SliderPicker } from "react-color";
+import { SketchPicker, SliderPicker } from "react-color";
 
 import "./ColorCustomizer.css";
 
@@ -12,10 +12,6 @@ export const ColorCustomizer = ({ changeBackground, setFavColors }) => {
 
   function updateColor(color) {
     setColor(color);
-  }
-
-  function copyToClipboard() {
-    console.log("copied");
   }
 
   function addToFavorites() {
@@ -44,16 +40,18 @@ export const ColorCustomizer = ({ changeBackground, setFavColors }) => {
   return (
     <div className="color-customizer">
       <div className="react-colors">
-        <PhotoshopPicker
+        <SketchPicker
+          width={400}
+          disableAlpha={true}
+          presetColors={[]}
           color={color}
           header={"Color customizer"}
-          onChangeComplete={updateColor}
+          onChange={updateColor}
         />
         <SliderPicker
           color={color}
-          style={{ "background-color": "#ffffff" }}
           className="react-slider"
-          onChangeComplete={updateColor}
+          onChange={updateColor}
         />
       </div>
 
