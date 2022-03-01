@@ -1,0 +1,39 @@
+.palette-wrapper {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 2px solid #232323;
+  background-color: #121212;
+
+  .palette-navigation {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-info {
+      display: flex;
+
+      .generate-palette {
+        cursor: pointer;
+        font-size: 0.9rem;
+        outline: none;
+        border: none;
+        color: #fff;
+        border-radius: 15px;
+        transition: all 0.15s ease-in;
+      }
+
+      .generate-palette:hover {
+        text-decoration: underline;
+      }
+
+      #palettes {
+        margin-left: 1.25rem;
+      }
+    }
+  }
+}

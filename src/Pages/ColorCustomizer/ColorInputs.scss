@@ -1,0 +1,42 @@
+.color-inputs {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .input-row {
+    margin: 0.5rem 0;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    label {
+      font-size: 1.2rem;
+    }
+  }
+
+  .range-input {
+    margin-left: 1.5rem;
+    width: 255px;
+  }
+
+  .text-input {
+    background-color: #232323;
+    color: #fefefe;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 50px;
+    padding: 0.5rem 0;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+  }
+
+  .input-header {
+    font-size: 1.5rem;
+    justify-content: left;
+  }
+}

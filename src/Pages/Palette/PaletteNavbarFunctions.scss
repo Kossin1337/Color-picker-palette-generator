@@ -1,0 +1,47 @@
+.palette-functions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.palette-functions-item {
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+.palette-functions-item:hover {
+  color: #9d9d9d;
+}
+
+/* COLOR PALETTE */
+.color-palette {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.color-on-palette {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-on-palette:hover {
+  opacity: 0.85;
+}
+
+.palette-color-name {
+  font-size: 1rem;
+}
+
+.btnInactive {
+  color: #9d9d9d;
+}

@@ -1,0 +1,82 @@
+/* NAVIGATION */
+.navigation {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+
+  .navigation-content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navigation-logo {
+      font-size: 1.5rem;
+    }
+
+    .navigation-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+
+      .navigation-item {
+        cursor: pointer;
+        padding: 0.25rem 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .navigation-item a {
+        text-decoration: none;
+        color: #fefefe;
+      }
+
+      .navigation-item .active {
+        font-weight: 500;
+        text-decoration: underline;
+      }
+
+      .navigation-item:hover {
+        transform: scale(1.05);
+        /* text-decoration: underline; */
+      }
+    }
+  }
+
+  .favorite-colors {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.2rem;
+    top: 1.75rem;
+    right: 2rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fefefe;
+    outline: none;
+    border: none;
+  }
+
+  .favorite-colors:hover {
+    color: crimson;
+  }
+
+  .favorite-colors:focus {
+    outline: none;
+  }
+
+  .number-of-fav-colors {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: -0.2rem;
+    top: -0.4rem;
+  }
+}
+
+/* Favorite colors btn */

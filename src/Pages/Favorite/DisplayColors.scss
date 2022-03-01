@@ -1,0 +1,55 @@
+.fav-colors {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .color-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+
+    .box-menu {
+      width: 100%;
+      position: absolute;
+      top: 0rem;
+      left: 0rem;
+      visibility: none;
+      display: none;
+      transition: all 0.15 ease;
+
+      i {
+        cursor: pointer;
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+        transition: all 0.15s ease;
+
+        &:hover {
+          color: #ccc;
+        }
+      }
+
+      .fa-copy {
+        margin-left: 0.5rem;
+      }
+
+      .fa-trash {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &:hover {
+      opacity: 0.9;
+
+      .box-menu {
+        visibility: visible;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
