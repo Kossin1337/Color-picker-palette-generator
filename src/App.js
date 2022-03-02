@@ -15,47 +15,44 @@ export function App() {
   const [favoriteColors, setFavoriteColors] = useState([]);
   const [favoritePalettes, setFavoritePalettes] = useState([]);
 
-  // function addFavColor(color) {
-  //   favoriteColors[favoriteColors.length] !== color
-  //     ? setFavoriteColors((prevColors) => [...prevColors, color])
-  //     : console.log("Color already added!");
-  // }
-
   return (
     <Router>
       <div className="color-picker">
         <Navigation favColors={favoriteColors.length} />
       </div>
-      <Switch>
-        <Route path="/color-palette">
-          <CustomPalette setFavoritePalettes={setFavoritePalettes} />
-        </Route>
+      <FavContext.Provider
+        value={{
+          favoriteColors,
+          setFavoriteColors,
+          favoritePalettes,
+          setFavoritePalettes,
+        }}
+      >
+        <Switch>
+          <Route path="/color-palette">
+            <CustomPalette />
+          </Route>
 
-        <Route path="/color-generator">
-          <ColorGenerator setFavColors={setFavoriteColors} />
-        </Route>
+          <Route path="/color-generator">
+            <ColorGenerator
+              favColors={favoriteColors}
+              setFavColors={setFavoriteColors}
+            />
+          </Route>
 
-        <Route path="/color-customizer">
-          <ColorCustomizer setFavColors={setFavoriteColors} />
-        </Route>
+          <Route path="/color-customizer">
+            <ColorCustomizer setFavColors={setFavoriteColors} />
+          </Route>
 
-        <Route path="/info">
-          <Info />
-        </Route>
+          <Route path="/info">
+            <Info />
+          </Route>
 
-        <Route path="/favorite">
-          <FavContext.Provider
-            value={{
-              favoriteColors,
-              setFavoriteColors,
-              favoritePalettes,
-              setFavoritePalettes,
-            }}
-          >
+          <Route path="/favorite">
             <Favorite />
-          </FavContext.Provider>
-        </Route>
-      </Switch>
+          </Route>
+        </Switch>
+      </FavContext.Provider>
     </Router>
   );
 }

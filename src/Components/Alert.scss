@@ -1,0 +1,39 @@
+.alert {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #323232;
+  border-radius: 15px;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  padding: 1rem 2rem;
+
+  .fa-trash {
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: all 0.15s ease;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.add {
+  span {
+    color: limegreen;
+  }
+}
+
+.info {
+  span {
+    color: yellow;
+  }
+}
+
+.delete {
+  span {
+    color: red;
+  }
+}

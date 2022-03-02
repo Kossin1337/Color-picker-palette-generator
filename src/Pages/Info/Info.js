@@ -3,7 +3,7 @@ import { ArticleRGB } from "./ArticleRGB";
 import { ArticleHEX } from "./ArticleHEX";
 import { ArticleHSL } from "./ArticleHSL";
 import { Route } from "react-router-dom";
-import "./Info.css";
+import "./Info.scss";
 import { InfoNavigation } from "./InfoNavigation";
 
 export const Info = () => {

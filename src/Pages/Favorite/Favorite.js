@@ -19,10 +19,10 @@ export const Favorite = () => {
       <div className="fav-content">
         <div className="fav-menu">
           <span>Filter by:</span>
-          <span className="menu-item" onClick={changeDisplay}>
+          <span className={`menu-item ${displayColors}`} onClick={changeDisplay} >
             Colors
           </span>
-          <span className="menu-item" onClick={changeDisplay}>
+          <span className={`menu-item ${!displayColors}`} onClick={changeDisplay}>
             Palettes
           </span>
         </div>

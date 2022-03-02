@@ -1,31 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import { createRGB } from "../../functions/createRGB";
 import { createHEX } from "../../functions/createHEX";
 import { createHSL } from "../../functions/createHSL";
+import { Alert } from "../../Components/Alert";
+
 import "./ColorGenerator.scss";
 
-export function ColorGenerator({ setFavColors }) {
+export const ColorGenerator = ({ favColors, setFavColors }) => {
   const [color, setColor] = useState("#121212");
+  const [status, setStatus] = useState(false);
+  const [statusType, setStatusType] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
+
+  useEffect(() => {
+    if (status === true) {
+      setTimeout(() => {
+        setStatus(false);
+      }, 3000);
+    }
+  }, [status]);
 
   function generateRGB() {
     const [color] = createRGB();
     setColor(color);
-    console.log(color);
-    // changeBackground(color);
   }
 
   function generateHEX() {
     const [color] = createHEX();
     setColor(color);
-    console.log(color);
-    // changeBackground(color);
   }
 
   function generateHSL() {
     const [color] = createHSL();
     setColor(color);
-    console.log(color);
-    // changeBackground(color);
   }
 
   function copyToClipboard() {
@@ -33,12 +41,29 @@ export function ColorGenerator({ setFavColors }) {
   }
 
   function addToFavorites() {
-    console.log(`Added ${color} item to favorites`);
-    setFavColors((prevColors) => [...prevColors, color]);
+    /* if color exists show an info msg */
+    if (favColors[favColors.length - 1] === color) {
+      setStatusMessage(`Color already added`);
+      setStatusType("info");
+    } else {
+      /* add color to fav */
+      setFavColors((prevColors) => [...prevColors, color]);
+      setStatusType("add");
+      setStatusMessage(`Color added`);
+      setStatus(true);
+      console.log(`Added ${color} item to favorites`);
+    }
   }
 
   return (
     <div className="color-switcher" style={{ backgroundColor: `${color}` }}>
+      {status && (
+        <Alert
+          type={statusType}
+          message={statusMessage}
+          setStatus={setStatus}
+        />
+      )}
       <h2>Generate random color</h2>
       <div className="color-switcher-buttons">
         <button onClick={generateRGB} className="color-btn" id="rgb">
@@ -58,4 +83,4 @@ export function ColorGenerator({ setFavColors }) {
       </div>
     </div>
   );
-}
+};

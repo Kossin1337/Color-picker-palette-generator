@@ -4,13 +4,14 @@ import { GeneratePalette } from "./GeneratePalette";
 import { createPalette } from "../../functions/createPalette";
 import "./CustomPalette.scss";
 
-export const CustomPalette = ({ setFavoritePalettes }) => {
+export const CustomPalette = () => {
   const [lastPalette, setLastPalette] = useState(null);
   const [currentPalette, setCurrentPalette] = useState(createPalette());
   const [nextPalette, setNextPalette] = useState(null);
   const [paletteCount, setPaletteCount] = useState(5);
 
   function handleClickIfSpacebar(event) {
+    console.log("sqrrt");
     console.log(event.charCode);
   }
 
@@ -48,7 +49,6 @@ export const CustomPalette = ({ setFavoritePalettes }) => {
           setCurrentPalette={setCurrentPalette}
           nextPalette={nextPalette}
           setNextPalette={setNextPalette}
-          setFavoritePalettes={setFavoritePalettes}
         />
       </div>
       <GeneratePalette currentPalette={currentPalette} />
