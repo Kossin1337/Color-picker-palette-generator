@@ -12,7 +12,7 @@ export const Info = () => {
       <div className="articles-wrapper">
         <InfoNavigation />
         <div className="article-container">
-          <Route exact path="/">
+          <Route exact path="/info">
             <h2>
               Explore our articles to learn more about different color models
             </h2>

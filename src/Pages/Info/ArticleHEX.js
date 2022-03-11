@@ -4,6 +4,11 @@ export const ArticleHEX = () => {
   return (
     <div className="article">
       <h2 className="article-headline">HEX (Hexadecimal)</h2>
+      <div className="article-info">
+        <Link to="/about" className="article-routing">
+          Kossin | Read time: 2 min
+        </Link>
+      </div>
       <p>
         Hex color codes are one type of HTML color code that you’ll often hear
         referred to as hexadecimal color or hex. You can look at hexadecimal
