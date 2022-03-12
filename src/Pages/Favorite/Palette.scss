@@ -12,3 +12,11 @@
     align-items: center;
   }
 }
+
+@media (max-width: 1500px) {
+  .palette {
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 8rem;
+  }
+}
