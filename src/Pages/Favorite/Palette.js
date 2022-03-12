@@ -3,7 +3,6 @@ import React from "react";
 import "./Palette.scss";
 
 export const Palette = ({ palette }) => {
-  console.log(palette);
   return (
     <div className="palette">
       {palette.map((color, index) => {

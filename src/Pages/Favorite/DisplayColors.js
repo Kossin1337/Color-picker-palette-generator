@@ -5,7 +5,6 @@ import "./DisplayColors.scss";
 
 export const DisplayColors = () => {
   const { favoriteColors, setFavoriteColors } = useContext(FavContext);
-  console.log(favoriteColors);
 
   return (
     <div className="fav-colors">

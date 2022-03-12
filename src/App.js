@@ -4,7 +4,8 @@ import { ColorGenerator } from "./Pages/ColorGenerator/ColorGenerator";
 import { Navigation } from "./Components/Navigation";
 import { ColorCustomizer } from "./Pages/ColorCustomizer/ColorCustomizer";
 import { CustomPalette } from "./Pages/Palette/CustomPalette";
-import { Info } from "./Pages/Info/Info";
+// import { Blog } from "./Pages/Blog/Blog";
+import { Blog } from "./Pages/Blog/Blog";
 import { Favorite } from "./Pages/Favorite/Favorite";
 
 import "./App.scss";
@@ -29,10 +30,6 @@ export function App() {
         }}
       >
         <Switch>
-          <Route path="/color-palette">
-            <CustomPalette />
-          </Route>
-
           <Route path="/color-generator">
             <ColorGenerator
               favColors={favoriteColors}
@@ -44,12 +41,15 @@ export function App() {
             <ColorCustomizer setFavColors={setFavoriteColors} />
           </Route>
 
-          <Route path="/info">
-            <Info />
+          <Route path="/blog">
+            <Blog />
           </Route>
 
           <Route path="/favorite">
             <Favorite />
+          </Route>
+          <Route exact path="/">
+            <CustomPalette />
           </Route>
         </Switch>
       </FavContext.Provider>

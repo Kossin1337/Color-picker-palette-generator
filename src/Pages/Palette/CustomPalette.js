@@ -29,7 +29,7 @@ export const CustomPalette = () => {
             onClick={generatePalette}
             onKeyPress={handleClickIfSpacebar}
           >
-            Press spacebar to generate {paletteCount} colors
+            Generate {paletteCount} colors
           </p>
           <input
             type="range"

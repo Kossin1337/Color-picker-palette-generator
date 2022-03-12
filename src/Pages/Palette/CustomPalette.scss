@@ -1,6 +1,7 @@
 .palette-wrapper {
   height: 100%;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +34,18 @@
 
       #palettes {
         margin-left: 1.25rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .palette-wrapper {
+    .palette-navigation {
+      flex-direction: column;
+      .nav-info {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   }

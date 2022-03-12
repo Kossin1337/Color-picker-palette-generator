@@ -24,18 +24,18 @@
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
-}
 
-.color-on-palette {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .color-on-palette {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.color-on-palette:hover {
-  opacity: 0.85;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
 }
 
 .palette-color-name {
@@ -44,4 +44,20 @@
 
 .btnInactive {
   color: #9d9d9d;
+}
+
+@media (max-width: 960px) {
+  .color-palette {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .palette-functions {
+    margin: 1rem 0;
+
+    .palette-functions-item {
+      font-size: 1rem;
+    }
+  }
 }

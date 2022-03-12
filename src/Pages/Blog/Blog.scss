@@ -1,0 +1,135 @@
+.color-info {
+  width: 100%;
+  border-top: 2px solid #232323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .articles-wrapper {
+    width: 80%;
+    margin-top: 1rem;
+    display: grid;
+    justify-content: center;
+    align-items: flex-start;
+    grid-template-columns: minmax(100px, 25%) 1fr;
+
+    .article-container {
+      width: 100%;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .article {
+        width: 100%;
+
+        .article-headline {
+          text-align: center;
+          margin: 0.75rem 0;
+          padding: 0;
+        }
+
+        .article-info {
+          font-size: 0.9rem;
+          color: #aeaeae;
+        }
+
+        p {
+          color: #ededed;
+        }
+
+        .trivia {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .trivia-bar {
+            background-color: #f5dd29;
+            color: #000;
+            border-radius: 25px;
+            padding: 0 0.5rem;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .trivia-heading {
+              margin: 0.25rem 0;
+              font-size: 1.1rem;
+              letter-spacing: 1px;
+              font-weight: 500;
+            }
+
+            .trivia-icon {
+              font-weight: 1.1rem;
+              margin-left: 1rem;
+            }
+          }
+
+          .trivia-source {
+            font-size: 0.8rem;
+            color: #f5dd29;
+          }
+        }
+      }
+    }
+  }
+}
+
+.article-routing {
+  color: rgba(245, 221, 41, 0.8);
+}
+
+.inactive {
+  visibility: none;
+  display: none;
+}
+
+.active {
+  visibility: visible;
+}
+
+.generate-color {
+  cursor: pointer;
+  font-weight: 500;
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  color: #000;
+  background-color: #f5dd29;
+  border: 2px solid #000;
+  border-radius: 20px;
+  transition: all 0.2s ease-in;
+}
+
+.generate-color:hover {
+  transform: scale(1.05);
+  background-color: #000;
+  color: #f5dd29;
+  border-color: #f5dd29;
+}
+
+@media (max-width: 1120px) {
+  .color-info {
+    .articles-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .article-container {
+        padding: 0;
+
+        .article {
+          .article-headline {
+            text-align: start;
+            margin: 1rem 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

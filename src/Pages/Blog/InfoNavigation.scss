@@ -1,0 +1,41 @@
+.articles-sidebar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-right: 2px solid #fefefe;
+  text-decoration: none;
+
+  .sidebar-title {
+    margin: 0.75rem 0 0.75rem 0.5rem;
+    padding: 0;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #aeaeae;
+
+    .article-title {
+      font-size: 1rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  a.active {
+    color: #f5dd29;
+    font-weight: 700;
+  }
+
+  a:hover {
+    color: #fefefe;
+  }
+}
+
+@media (max-width: 1120px) {
+  .articles-sidebar {
+    border: none;
+    border-bottom: 1px solid #fefefe;
+  }
+}

@@ -13,8 +13,18 @@
     justify-content: space-between;
     align-items: center;
 
-    .navigation-logo {
-      font-size: 1.5rem;
+    .content-wrapper {
+      a {
+        color: #fefefe;
+        text-decoration: none;
+        .navigation-logo {
+          font-size: 1.5rem;
+        }
+      }
+
+      .mobile-menu {
+        display: none;
+      }
     }
 
     .navigation-menu {
@@ -48,10 +58,7 @@
 
   .favorite-colors {
     cursor: pointer;
-    position: absolute;
-    font-size: 1.2rem;
-    top: 1.75rem;
-    right: 2rem;
+    font-size: 1rem;
     padding: 0.25rem 0.5rem;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0);
@@ -80,3 +87,44 @@
 }
 
 /* Favorite colors btn */
+@media (max-width: 885px) {
+  .navigation {
+    .navigation-content {
+      flex-direction: column;
+
+      .content-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #323232;
+
+        .mobile-menu {
+          font-size: 1.2rem;
+          cursor: pointer;
+          display: flex;
+
+          &:hover {
+            color: #ccc;
+          }
+        }
+      }
+
+      .navigation-menu {
+        flex-direction: column;
+      }
+
+      .false {
+        display: none;
+      }
+
+      .true {
+        display: flex;
+      }
+    }
+  }
+
+  .favorite-colors {
+    margin-top: 0.5rem;
+  }
+}

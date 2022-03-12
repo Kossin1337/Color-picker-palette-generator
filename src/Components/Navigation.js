@@ -1,8 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./Navigation.scss";
 
 export function Navigation({ favColors }) {
+  const [menuActive, setMenuActive] = useState(false);
+
   function showFavorites() {
     console.log(favColors);
   }
@@ -10,29 +12,37 @@ export function Navigation({ favColors }) {
   return (
     <nav className="navigation">
       <div className="navigation-content">
-        <h1 className="navigation-logo">Color picker</h1>
-        <ul className="navigation-menu">
-          <li className="navigation-item">
-            <NavLink to="/color-palette">Custom Palette</NavLink>
+        <div className="content-wrapper">
+          <Link to="/">
+            <h1 className="navigation-logo">Color picker</h1>
+          </Link>
+          <i
+            className="fas fa-bars mobile-menu"
+            onClick={() => setMenuActive((prevMenuState) => !prevMenuState)}
+          ></i>
+        </div>
+        <ul className={`navigation-menu ${menuActive}`}>
+          <li className="navigation-item" onClick={() => setMenuActive(false)}>
+            <NavLink exact to="/">
+              Custom Palette
+            </NavLink>
           </li>
-          <li className="navigation-item">
+          <li className="navigation-item" onClick={() => setMenuActive(false)}>
             <NavLink to="/color-generator">Random color</NavLink>
           </li>
-          <li className="navigation-item">
+          <li className="navigation-item" onClick={() => setMenuActive(false)}>
             <NavLink to="/color-customizer">Customize</NavLink>
           </li>
-          <li className="navigation-item">
-            <NavLink to="/info">Blog</NavLink>
+          <li className="navigation-item" onClick={() => setMenuActive(false)}>
+            <NavLink to="/blog">Blog</NavLink>
           </li>
+          <NavLink to="/favorite" onClick={() => setMenuActive(false)}>
+            <button className="favorite-colors">
+              <i className="far fa-heart" onClick={showFavorites}></i>
+            </button>
+          </NavLink>
         </ul>
       </div>
-
-      <NavLink to="/favorite">
-        <button className="favorite-colors">
-          {/* <p className="number-of-fav-colors">{favColors}</p> */}
-          <i className="far fa-heart" onClick={showFavorites}></i>
-        </button>
-      </NavLink>
     </nav>
   );
 }

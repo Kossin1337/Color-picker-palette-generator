@@ -5,8 +5,7 @@ import { Palette } from "./Palette";
 import "./DisplayPalettes.scss";
 
 export const DisplayPalettes = () => {
-  const { favoritePalettes, setFavoritePalettes } = useContext(FavContext);
-  console.log(favoritePalettes);
+  const { favoritePalettes } = useContext(FavContext);
 
   return (
     <div className="fav-palettes">

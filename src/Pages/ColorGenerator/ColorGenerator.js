@@ -78,7 +78,6 @@ export const ColorGenerator = ({ favColors, setFavColors }) => {
       </div>
       <div className="color-result">
         <h3>{color}</h3>
-        <i className="fas fa-copy" onClick={copyToClipboard}></i>
         <i className="far fa-heart" onClick={addToFavorites}></i>
       </div>
     </div>
